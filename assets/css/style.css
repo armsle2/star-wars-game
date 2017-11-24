@@ -14,6 +14,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height:100%;
   opacity: .5;
 
@@ -35,37 +36,104 @@ body, html {
 
 .col-md-2 {
 	margin: 10px;
-	min-width: 150px;
-	max-width: 150px;
+	min-width: 200px;
+	max-width: 200px;
+}
+.col-md-3 {
+	margin: 10px;
+	min-width: 200px;
+	max-width: 200px;
 }
 .inner {
 	border-radius: 10px;
 	padding: 10px;
 	text-align: center;
+	max-width: 200px;
+}
+.top-buffer{
+	margin-top: 35px;
 }
 
 #player-1 {
-	background-color: black;
-	/*width: 10%;*/
+	background-color: rgba(255,255,255,0.8);
 	height: 150px;
+
+}
+#player-1 img {
+	max-width: 100%;
+	/*margin: 10px;*/
 
 }
 #player-2 {
-	background-color: black;
-	/*width: 10px;*/
+	background-color: rgba(255,255,255,0.8);
 	height: 150px;
+
+}
+#player-2 img {
+	max-width: 100%;
+	/*margin: 10px;*/
 
 }
 #player-3 {
-	background-color: black;
-	/*width: 10px;*/
+	background-color: rgba(255,255,255,0.8);
 	height: 150px;
+
+
+}
+#player-3 img {
+	max-width: 100%;
+	/*margin: 10px;*/
 
 }
 #player-4 {
-	background-color: black;
-	/*width: 10px;*/
+	background-color: rgba(255,255,255,0.8);
 	height: 150px;
 
 }
+#player-4 img {
+	max-width: 100%;
+	/*margin: 10px;*/
 
+}
+#enemy-1 {
+	background-color: rgba(237,183,130,0.8);
+	height: 150px;
+
+
+}
+#enemy-1 img {
+	max-width: 100%;
+	/*margin: 10px;*/
+
+}
+#enemy-2 {
+	background-color: rgba(237,183,130,0.8);
+	height: 150px;
+
+
+}
+#enemy-2 img {
+	max-width: 100%;
+	/*margin: 10px;*/
+
+}
+#enemy-3 {
+	background-color: rgba(237,183,130,0.8);
+	height: 150px;
+
+}
+#enemy-3 img {
+	max-width: 100%;
+	/*margin: 10px;*/
+
+}
+
+#defender {
+	background-color: rgba(249,21,21,0.7);
+	height: 150px;
+}
+#defender img {
+	max-width: 100%;
+	/*margin: 10px;*/
+
+}
