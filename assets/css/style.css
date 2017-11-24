@@ -1,0 +1,71 @@
+body, html {
+    height: 100%;
+}
+
+.bg:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("../images/star-wars-pic1.jpg");  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:100%;
+  opacity: .5;
+
+}
+
+/*.layer { 
+  background-image: url("../images/star-wars-pic1.jpg");
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+*/
+
+/*.row {
+	height: 800px;
+}*/
+
+.col-md-2 {
+	margin: 10px;
+	min-width: 150px;
+	max-width: 150px;
+}
+.inner {
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
+#player-1 {
+	background-color: black;
+	/*width: 10%;*/
+	height: 150px;
+
+}
+#player-2 {
+	background-color: black;
+	/*width: 10px;*/
+	height: 150px;
+
+}
+#player-3 {
+	background-color: black;
+	/*width: 10px;*/
+	height: 150px;
+
+}
+#player-4 {
+	background-color: black;
+	/*width: 10px;*/
+	height: 150px;
+
+}
+
