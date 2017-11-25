@@ -25,13 +25,35 @@
 //if all enemies have been defeated
 	//display message You Won Game Over
 
+var enemyLuke = "<div class='inner' id='enemy-1'>Name<img src='assets/images/luke.jpg'><div id='player-1-hp'></div></div>"
+
+function playerChoice1(){
+$('#player-2').attr('id', 'enemy-1');
+$("#enemy").append($('#enemy-1'));
+$('#player-3').attr('id', 'enemy-2');
+$("#enemy").append($('#enemy-2'));
+$('#player-4').attr('id', 'enemy-3');
+$("#enemy").append($('#enemy-3'));
+
+};
+function enemyChoice1(){
+$('#enemy-1').attr('id', 'defender-1');
+$("#defender").append($('#defender-1'));
+// $("#enemy").append($('#player-3'));
+// $("#enemy").append($('#player-4'));
+};
+
 $(document).ready(function(){
 
-$("#enemy").hide("enemy-1");
 
-// $("#player-2").click(function(){
-// 	$("#enemy").append(luke);
-// 	$("#player-1").hide(luke);
+// $("#enemy-1").hide(0);
+// $("#enemy-2").hide(0);
+// $("#enemy-3").hide(0);
+// $("#enemy-4").hide(0);
+
+$("#player-1").click(playerChoice1);
+$("#enemy").on("click", "#enemy-1", enemyChoice1);
+
 
 
 
