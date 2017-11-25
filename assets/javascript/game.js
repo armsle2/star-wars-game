@@ -36,12 +36,51 @@ $('#player-4').attr('id', 'enemy-3');
 $("#enemy").append($('#enemy-3'));
 
 };
+function playerChoice2(){
+$('#player-1').attr('id', 'enemy-1');
+$("#enemy").append($('#enemy-1'));
+$('#player-3').attr('id', 'enemy-2');
+$("#enemy").append($('#enemy-2'));
+$('#player-4').attr('id', 'enemy-3');
+$("#enemy").append($('#enemy-3'));
+
+};
+function playerChoice3(){
+$('#player-1').attr('id', 'enemy-1');
+$("#enemy").append($('#enemy-1'));
+$('#player-2').attr('id', 'enemy-2');
+$("#enemy").append($('#enemy-2'));
+$('#player-4').attr('id', 'enemy-3');
+$("#enemy").append($('#enemy-3'));
+
+};
+function playerChoice4(){
+$('#player-1').attr('id', 'enemy-1');
+$("#enemy").append($('#enemy-1'));
+$('#player-2').attr('id', 'enemy-2');
+$("#enemy").append($('#enemy-2'));
+$('#player-3').attr('id', 'enemy-3');
+$("#enemy").append($('#enemy-3'));
+
+};
+
+
 function enemyChoice1(){
 $('#enemy-1').attr('id', 'defender-1');
-$("#defender").append($('#defender-1'));
-// $("#enemy").append($('#player-3'));
-// $("#enemy").append($('#player-4'));
+$("#defender").html($('#defender-1'));
+
 };
+function enemyChoice2(){
+$('#enemy-2').attr('id', 'defender-1');
+$("#defender").html($('#defender-1'));
+
+};
+function enemyChoice3(){
+$('#enemy-3').attr('id', 'defender-1');
+$("#defender").html($('#defender-1'));
+
+};
+
 
 $(document).ready(function(){
 
@@ -51,8 +90,18 @@ $(document).ready(function(){
 // $("#enemy-3").hide(0);
 // $("#enemy-4").hide(0);
 
-$("#player-1").click(playerChoice1);
+// $("#player-1").click(playerChoice1);
+// $("#player-2").click(playerChoice2);
+$("#player").on("click", "#player-1", playerChoice1);
+$("#player").on("click", "#player-2", playerChoice2);
+$("#player").on("click", "#player-3", playerChoice2);
+$("#player").on("click", "#player-4", playerChoice2);
+
+// $("#player-3").click(playerChoice3);
+// $("#player-4").click(playerChoice4);
 $("#enemy").on("click", "#enemy-1", enemyChoice1);
+$("#enemy").on("click", "#enemy-2", enemyChoice2);
+$("#enemy").on("click", "#enemy-3", enemyChoice3);
 
 
 
