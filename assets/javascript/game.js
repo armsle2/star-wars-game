@@ -26,6 +26,10 @@
 	//display message You Won Game Over
 
 var enemyLuke = "<div class='inner' id='enemy-1'>Name<img src='assets/images/luke.jpg'><div id='player-1-hp'></div></div>"
+var lukeHP = 120
+var quiGonHP = 150
+var darthMaulHP = 175
+var anakinHP = 250
 
 function playerChoice1(){
 $('#player-2').attr('id', 'enemy-1');
@@ -83,7 +87,10 @@ $("#defender").html($('#defender-1'));
 
 
 $(document).ready(function(){
-
+$("#player-1-hp").html(lukeHP);
+$("#player-2-hp").html(quiGonHP);
+$("#player-3-hp").html(darthMaulHP);
+$("#player-4-hp").html(anakinHP);
 
 // $("#enemy-1").hide(0);
 // $("#enemy-2").hide(0);
