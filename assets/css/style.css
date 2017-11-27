@@ -12,9 +12,15 @@ body {
 	/*top: 0;*/
 	/*position: absolute;*/
   background: rgba(164, 192, 255, 0.5);
-  height: 100vh;
-
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+	position: fixed;
+	overflow-y: scroll;
 }
+
 
 /*.layer { 
   background-image: url("../images/star-wars-pic1.jpg");
