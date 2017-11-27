@@ -18,17 +18,17 @@
 				<div class="col text-center">
 					<h1>Choose Your Character</h1>
 					<div class="row justify-content-center" id="player">
-						<div class="inner" id="player-1">Luke<img src="assets/images/luke.jpg">
-							<div id="player-1-hp"></div>
+						<div data-hp="120" data-ap="10" data-counterap="30" class="inner" id="character-1">Luke<img src="assets/images/luke.jpg">
+							<div id="character-1-hp"></div>
 						</div>
-						<div class="inner" id="player-2">Qui Gon<img src="assets/images/qui-gon.jpeg">
-							<div id="player-2-hp"></div>
+						<div data-hp="150" data-ap="8" data-counterap="25" class="inner" id="character-2">Qui Gon<img src="assets/images/qui-gon.jpeg">
+							<div id="character-2-hp"></div>
 						</div>
-						<div class="inner" id="player-3">Darth Maul<img src="assets/images/darth-maul.jpeg">
-							<div id="player-3-hp"></div>
+						<div data-hp="175" data-ap="11" data-counterap="24" class="inner" id="character-3">Darth Maul<img src="assets/images/darth-maul.jpeg">
+							<div id="character-3-hp"></div>
 						</div>
-						<div class="inner" id="player-4">Anakin<img src="assets/images/anakin-2.jpg">
-							<div id="player-4-hp"></div>
+						<div data-hp="250" data-ap="15" data-counterap="25" class="inner" id="character-4">Anakin<img src="assets/images/anakin-2.jpg">
+							<div id="character-4-hp"></div>
 						</div>	
 					</div>				
 				</div>					
@@ -55,13 +55,16 @@
 			<div class="row justify-content-center top-buffer">
 				<div class="col text-center"><h3>Fight Section</h3>
 					<button id="fight-button">FIGHT</button>
+					<br />
+					<br />
+					<button id="play-again-button">PLAY AGAIN</button>
 				</div>
 			</div>
 			<br />
 			<br />
 			<div class="row">
 				<div class="col text-center">
-					<h2>DEFENDER</h2>
+					<h2 class="defender-title">DEFENDER</h2>
 					<div class="row justify-content-center" id="defender">
 						<!-- <div class="inner" id="defender-1">Name<img src="assets/images/luke.jpg">
 							<div id="player-1-hp"></div>
@@ -81,6 +84,11 @@
 					</div>	
 				</div>				
 			</div>
+			<audio controls autoplay loop>
+  				<!-- <source src="horse.ogg" type="audio/ogg"> -->
+ 			 	<source src="assets/sounds/star-wars-fight-music.wav" type="audio/mpeg">
+				Your browser does not support the audio element.
+				</audio>
 		</div>
 	</div>
 		
