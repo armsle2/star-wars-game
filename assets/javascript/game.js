@@ -165,6 +165,10 @@ function fight(){
 		$('audio').each(function(){ this.muted = true });
 		$('#fight-button').off('click');		
 		gameOver.play();	
+	}else if ($("#enemy")[0].innerText === "" && opponent.hp <= 0){
+		setTimeout(function(){
+		$("h1").html("YOU LOST");
+		}, 100);
 	}else if (opponent.hp <= 0){
 		$("#defender").html('YOU BEAT YOUR OPPONENT! CHOOSE YOUR NEXT ENEMY!');
 		$("#enemy").on("click", "#enemy-1", enemyChoice1);
