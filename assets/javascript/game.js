@@ -26,12 +26,14 @@
 	//display message You Won Game Over
 
 var luke = {
+	name: "Luke",
 	hp: 120,
 	ap: 20,
 	nap: 20,
 	cap: 30,
 }
 var quiGon = {
+	name: "Qui Gon",
 	hp: 150,
 	ap: 8,
 	nap: 8,
@@ -39,6 +41,7 @@ var quiGon = {
 }
 
 var darthMaul = {
+	name: "Darth Maul",
 	hp: 175,
 	ap: 11,
 	nap: 11,
@@ -46,6 +49,7 @@ var darthMaul = {
 }
 
 var anakin = {
+	name: "Anakin",
 	hp: 250,
 	ap: 15,
 	nap: 15,
@@ -130,6 +134,8 @@ lightsaberOn.play();
 
 };
 function fight(){
+	$('#player-fight').html('You hit ' + opponent.name + ' with <strong>' + player.nap + '</strong> attack points');
+	$('#opponent-fight').html(opponent.name + ' hit you with <strong>' + opponent.cap + '</strong> counter attack points');
 	opponent.hp-=player.nap;
 	player.hp-=opponent.cap;
 	console.log(player.hp);
