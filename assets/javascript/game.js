@@ -25,19 +25,15 @@
 //if all enemies have been defeated
 	//display message You Won Game Over
 
-var enemyLuke = "<div class='inner' id='enemy-1'>Name<img src='assets/images/luke.jpg'><div id='player-1-hp'></div></div>"
-var lukeHP = 120
-var quiGonHP = 150
-var darthMaulHP = 175
-var anakinHP = 250
-
 var luke = {
+	name: "Luke",
 	hp: 120,
 	ap: 20,
 	nap: 20,
 	cap: 30,
 }
 var quiGon = {
+	name: "Qui Gon",
 	hp: 150,
 	ap: 8,
 	nap: 8,
@@ -45,6 +41,7 @@ var quiGon = {
 }
 
 var darthMaul = {
+	name: "Darth Maul",
 	hp: 175,
 	ap: 11,
 	nap: 11,
@@ -52,6 +49,7 @@ var darthMaul = {
 }
 
 var anakin = {
+	name: "Anakin",
 	hp: 250,
 	ap: 15,
 	nap: 15,
@@ -65,6 +63,8 @@ var lightsaber1 = new Audio('assets/sounds/lightsaber1.wav');
 var lightsaber2 = new Audio('assets/sounds/lightsaber2.wav');
 var lightsaberOn = new Audio('assets/sounds/lightsaber-on.wav');
 var gameOver = new Audio('assets/sounds/star-wars-game-over-music.wav');
+var winner = new Audio('assets/sounds/star-wars-winner-music.wav');
+var evilLaugh = new Audio('assets/sounds/darth-sidious-laugh.wav');
 var clickCount = 0;
 
 function playerChoice1(){
@@ -81,7 +81,7 @@ console.log(player.hp);
 console.log(player.nap);
 console.log("-------------");
 lightsaberOn.play();
-youWon();
+
 
 };
 function playerChoice2(){
@@ -130,11 +130,12 @@ console.log(player.hp);
 console.log(player.nap);
 console.log("-------------");
 lightsaberOn.play();
-youWon();
 
 
 };
 function fight(){
+	$('#player-fight').html('You hit ' + opponent.name + ' with <strong>' + player.nap + '</strong> attack points');
+	$('#opponent-fight').html(opponent.name + ' hit you with <strong>' + opponent.cap + '</strong> counter attack points');
 	opponent.hp-=player.nap;
 	player.hp-=opponent.cap;
 	console.log(player.hp);
@@ -155,7 +156,7 @@ function fight(){
 		}, 100);
 		$('audio').each(function(){ this.muted = true });
 		gameOver.play();
-		// playAgain();	
+		evilLaugh.play();	
 	}else if (player.hp <= 0){
 		setTimeout(function(){
 		$("h1").html("YOU LOST");
@@ -165,10 +166,19 @@ function fight(){
 		$('audio').each(function(){ this.muted = true });
 		$('#fight-button').off('click');		
 		gameOver.play();	
+		evilLaugh.play();	
 	}else if ($("#enemy")[0].innerText === "" && opponent.hp <= 0){
 		setTimeout(function(){
-		$("h1").html("YOU LOST");
+		$("h1").html("YOU SAVED US FROM THE DARK SIDE!");
+		$("#enemy").html("<img src='assets/images/jediorder.jpg' style='max-width: 600px; max-height: 400px; border-radius: 10px;'>");
+		$("h2[class='defender-title']").html("");
+		$("h2[class='enemy-title']").html("");
+		$("#defender").html("");
+		$("#play-again-button").css("display", "inline");
 		}, 100);
+		$('audio').each(function(){ this.muted = true });
+		$('#fight-button').off('click');		
+		winner.play();	
 	}else if (opponent.hp <= 0){
 		$("#defender").html('YOU BEAT YOUR OPPONENT! CHOOSE YOUR NEXT ENEMY!');
 		$("#enemy").on("click", "#enemy-1", enemyChoice1);
@@ -184,7 +194,7 @@ function fight(){
 	}
 	console.log($("#enemy"));
 	console.log($("#defender"));
-	setTimeout(youWon, 3000);
+	
 
 };
 
@@ -237,6 +247,7 @@ $("#enemy").off("click", "#enemy-4");
 $('#fight-button').on('click', fight);
 
 opponent = darthMaul;
+console.log(opponent.hp);
 console.log(opponent.cap);
 console.log("-------------");
 lightsaberOn.play();
@@ -260,11 +271,6 @@ lightsaberOn.play();
 
 };
 
-function youWon(){
-	if ($("#enemy")[0].innerText === "" && $("#defender")[0].innerText === ""){
-		alert("you won")
-	}
-}
 
 $(document).ready(function(){
 $("#character-1-hp").html(luke.hp);
